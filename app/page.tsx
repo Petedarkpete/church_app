@@ -6,6 +6,7 @@ import Ministries from "@/components/ministries"
 import Events from "@/components/events"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
+import "animate.css"
 
 export default function ChurchWebsite() {
   return (

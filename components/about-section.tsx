@@ -7,7 +7,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <Image
-              src="/placeholder.svg?height=500&width=600"
+              src="/images/about.jpg"
               alt="Pastor and congregation"
               width={600}
               height={500}

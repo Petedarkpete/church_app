@@ -3,14 +3,17 @@ import { Clock, BookOpen, Heart } from "lucide-react"
 
 export default function ServiceTimes() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">Join Us for Worship</h3>
-          <p className="text-lg text-gray-600">Come as you are, leave transformed</p>
+          <div className="text-center mb-12 animate__animated animate__fadeInUp">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Join Us for Worship</h3>
+            <p className="text-lg text-gray-600">Come as you are, leave transformed</p>
+          </div>
+
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="text-center border-2 border-sky-100">
+          <Card className="text-center border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">
             <CardHeader>
               <Clock className="h-12 w-12 text-sky-600 mx-auto mb-4" />
               <CardTitle className="text-xl">Sunday Worship</CardTitle>
@@ -20,7 +23,7 @@ export default function ServiceTimes() {
               <p className="text-gray-600">Traditional & Contemporary Services</p>
             </CardContent>
           </Card>
-          <Card className="text-center border-2 border-sky-100">
+          <Card className="text-center border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">
             <CardHeader>
               <BookOpen className="h-12 w-12 text-sky-600 mx-auto mb-4" />
               <CardTitle className="text-xl">Bible Study</CardTitle>
@@ -30,7 +33,7 @@ export default function ServiceTimes() {
               <p className="text-gray-600">Deep dive into God's Word</p>
             </CardContent>
           </Card>
-          <Card className="text-center border-2 border-sky-100">
+          <Card className="text-center border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">
             <CardHeader>
               <Heart className="h-12 w-12 text-sky-600 mx-auto mb-4" />
               <CardTitle className="text-xl">Prayer Meeting</CardTitle>
