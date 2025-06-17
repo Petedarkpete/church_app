@@ -37,10 +37,10 @@ export default function HeroSection() {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl">
             <h2 className="text-5xl font-bold text-white mb-6">
-              Welcome to Our Church Family
+              Welcome to Church of God, Githurai 45
             </h2>
             <p className="text-xl text-white mb-8 leading-relaxed">
-              Join us as we grow in faith, serve our community, and experience God's love together. Everyone is welcome at Grace Community Church.
+              Join us as we grow in faith, serve our community, and experience God's love together. Everyone is welcome at Church of God, Githurai 45.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <HeroButton />
