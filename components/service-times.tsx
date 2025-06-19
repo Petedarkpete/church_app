@@ -3,7 +3,7 @@ import { Clock, BookOpen, Heart } from "lucide-react"
 
 export default function ServiceTimes() {
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-gradient-to-b from-blue-100 via-white to-red-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <div className="text-center mb-12 animate__animated animate__fadeInUp">
@@ -16,30 +16,30 @@ export default function ServiceTimes() {
           <Card className="text-center border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">
             <CardHeader>
               <Clock className="h-12 w-12 text-sky-600 mx-auto mb-4" />
-              <CardTitle className="text-xl">Sunday Worship</CardTitle>
+              <CardTitle className="text-xl">Sunday Morning Glory</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-gray-900 mb-2">9:00 AM & 11:00 AM</p>
-              <p className="text-gray-600">Traditional & Contemporary Services</p>
+              <p className="text-2xl font-bold text-gray-900 mb-2">8:00 AM & 10:00 AM</p>
+              <p className="text-gray-600">Get to experience God</p>
             </CardContent>
           </Card>
           <Card className="text-center border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">
             <CardHeader>
               <BookOpen className="h-12 w-12 text-sky-600 mx-auto mb-4" />
-              <CardTitle className="text-xl">Bible Study</CardTitle>
+              <CardTitle className="text-xl">Main Sunday Service</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-gray-900 mb-2">Wednesday 7:00 PM</p>
+              <p className="text-2xl font-bold text-gray-900 mb-2">10:00 AM & 1:00 PM</p>
               <p className="text-gray-600">Deep dive into God's Word</p>
             </CardContent>
           </Card>
           <Card className="text-center border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">
             <CardHeader>
               <Heart className="h-12 w-12 text-sky-600 mx-auto mb-4" />
-              <CardTitle className="text-xl">Prayer Meeting</CardTitle>
+              <CardTitle className="text-xl">Wednesday Fellowship</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-gray-900 mb-2">Friday 6:30 PM</p>
+              <p className="text-2xl font-bold text-gray-900 mb-2">6:00 PM & 9:00 PM</p>
               <p className="text-gray-600">Come together in prayer</p>
             </CardContent>
           </Card>
