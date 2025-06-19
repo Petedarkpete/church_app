@@ -28,7 +28,7 @@ export default function Events() {
   ]
 
   return (
-    <section id="events" className="py-16 bg-gray-50">
+    <section id="events" className="py-12 bg-gradient-to-b from-red-100 via-white to-blue-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Upcoming Events</h3>
