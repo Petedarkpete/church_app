@@ -15,9 +15,9 @@ export default function AboutSection() {
             />
           </div>
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">About Grace Community Church</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">About Church of God, Githurai 45</h3>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              For over 50 years, Grace Community Church has been a beacon of hope and love in our community. We believe
+              For over 50 years, Church of God, Githurai 45 has been a beacon of hope and love in our community. We believe
               in the transformative power of God's grace and are committed to helping people discover their purpose and
               grow in their relationship with Jesus Christ.
             </p>
