@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import Image from "next/image"
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-12 bg-gradient-to-b from-red-100 via-white to-blue-100">
+    <section id="about" className="scroll-mt-24 py-12 bg-gradient-to-b from-red-100 via-white to-blue-100">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
