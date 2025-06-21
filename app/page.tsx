@@ -7,18 +7,20 @@ import Events from "@/components/events"
 import ContactSection from "@/components/contact-section"
 import Footer from "@/components/footer"
 import "animate.css"
+import FadeInSection from "@/components/FadeInSection";
+
 
 export default function ChurchWebsite() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <HeroSection />
-      <ServiceTimes />
-      <AboutSection />
-      <Ministries />
-      <Events />
-      <ContactSection />
+      <FadeInSection><ServiceTimes /></FadeInSection>
+      <FadeInSection><AboutSection /></FadeInSection>
+      <FadeInSection><Ministries /></FadeInSection>
+      <FadeInSection><Events /></FadeInSection>
+      <FadeInSection><ContactSection /></FadeInSection>
       <Footer />
     </div>
-  )
+  );
 }
