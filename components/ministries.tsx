@@ -25,27 +25,6 @@ export default function Ministries() {
       content:
         "Join our choir, band, or technical team to help create meaningful worship experiences for our congregation.",
     },
-    {
-      icon: Users,
-      title: "Small Groups",
-      description: "Adults",
-      content:
-        "Connect with others in intimate settings for Bible study, fellowship, and mutual support throughout the week.",
-    },
-    {
-      icon: Handshake,
-      title: "Community Outreach",
-      description: "All Ages",
-      content:
-        "Serve our local community through food drives, volunteer work, and partnerships with local organizations.",
-    },
-    {
-      icon: Heart,
-      title: "Care Ministry",
-      description: "All Ages",
-      content:
-        "Providing support, prayer, and practical help to those going through difficult times or life transitions.",
-    },
   ]
 
   return (
