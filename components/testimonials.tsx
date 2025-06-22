@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote } from "lucide-react"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export default function Component() {
   const pastors = [
@@ -39,7 +41,6 @@ export default function Component() {
 
   return (
   <section id="testimonials" className="scroll-mt-24 py-12 bg-gradient-to-b from-blue-100 via-white to-red-100">
-
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="text-center mb-6">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Pastoral Team</h2>
