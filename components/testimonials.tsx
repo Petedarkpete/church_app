@@ -38,6 +38,8 @@ export default function Component() {
   ]
 
   return (
+  <section id="testimonials" className="scroll-mt-24 py-12 bg-gradient-to-b from-blue-100 via-white to-red-100">
+
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="text-center mb-6">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Pastoral Team</h2>
@@ -48,7 +50,7 @@ export default function Component() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {pastors.map((pastor, index) => (
-          <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
+          <Card key={index} className="bg-gradient-to-b from-blue-100 via-white to-grey-100 shadow-lg hover:shadow-xl transition-shadow duration-300 border-0">
             <CardContent className="p-8">
               <div className="flex flex-col items-center text-center space-y-6">
                 <div className="w-60 h-64 mx-auto mb-3 overflow-hidden rounded-lg shadow-md">
@@ -81,5 +83,6 @@ export default function Component() {
         </p>
       </div>
     </div>
+  </section>
   )
 }
