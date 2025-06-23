@@ -42,9 +42,9 @@ export default function PastSermons() {
   ]
 
   return (
-<section id="sermons" className="scroll-mt-24 py-12 bg-gradient-to-b from-red-100 via-white to-blue-100">
+<section id="sermons" className="scroll-mt-12 py-12 bg-gradient-to-b from-red-100 via-white to-blue-100">
 
-    <div className="w-full max-w-7xl mx-auto px-4 py-16">
+    <div className="w-full max-w-7xl mx-auto px-4 py-2">
       <div className="text-center mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Past Sermons</h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">

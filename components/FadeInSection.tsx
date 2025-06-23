@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export default function FadeInSection({ children, className = "" }) {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.2 });
+  const [ref, inView] = useInView({ threshold: 0.05 });
 
   useEffect(() => {
     if (inView) {

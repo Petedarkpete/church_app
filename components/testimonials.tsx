@@ -29,14 +29,6 @@ export default function Component() {
         "Working with our young people fills me with hope for the future. Their passion for God and desire to make a difference in the world inspires me to be a better leader and servant.",
       initials: "DC",
     },
-    {
-      name: "Pastor Maria Rodriguez",
-      title: "Children's Pastor",
-      image: "/placeholder.svg?height=256&width=192",
-      testimonial:
-        "There's nothing more precious than seeing a child's face light up when they understand God's love for them. Our children's ministry is where faith takes root and grows.",
-      initials: "MR",
-    },
   ]
 
   return (
