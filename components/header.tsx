@@ -60,10 +60,11 @@ export default function Header() {
                   </li>
                   <li>
                     <Link
-                      href="#outreach"
+                      href="/worship"
+                      onClick={() => setOpenDropdown(false)}
                       className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
                     >
-                      Outreach
+                      Learn our Songs
                     </Link>
                   </li>
                 </ul>
