@@ -6,23 +6,31 @@ import { Button } from "@/components/ui/button"
 export default function Component() {
   const pastors = [
     {
-      name: "Pastor Michael Johnson",
-      title: "Senior Pastor",
+      name: "Pastor Francis Mburu",
+      title: "Pastor",
       image: "/images/pastor1.jpg",
       testimonial:
         "Serving this congregation has been the greatest blessing of my life. Watching families grow in faith and seeing lives transformed by God's love reminds me daily why I was called to ministry.",
       initials: "MJ",
     },
     {
-      name: "Pastor Sarah Williams",
-      title: "Associate Pastor",
+      name: "Pastor Paul Ndahi",
+      title: "Pastor",
       image: "/images/pastor2.jpg",
       testimonial:
         "The heart of our ministry is building authentic relationships. Every day I'm amazed by the strength and compassion of our church family as we walk together in faith.",
       initials: "SW",
     },
     {
-      name: "Pastor David Chen",
+      name: "Pastor Francis Kinyua",
+      title: "Pastor",
+      image: "/images/pastor3.jpg",
+      testimonial:
+        "Working with our young people fills me with hope for the future. Their passion for God and desire to make a difference in the world inspires me to be a better leader and servant.",
+      initials: "DC",
+    },
+    {
+      name: "Pastor Peter Njogu",
       title: "Youth Pastor",
       image: "/images/pastor3.jpg",
       testimonial:
