@@ -155,7 +155,7 @@ export default function WorshipSong() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Sticky Audio Player */}
-      <div className="sticky top-0 z-50 bg-white shadow-lg border-b">
+      <div className="bg-white shadow-lg border-b">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <Card className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
             <CardContent className="p-6">
