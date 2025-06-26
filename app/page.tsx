@@ -20,8 +20,8 @@ export default function ChurchWebsite() {
       <HeroSection />
       <FadeInSection><ServiceTimes /></FadeInSection>
       <FadeInSection><AboutSection /></FadeInSection>
-      <FadeInSection><Testimonials /></FadeInSection>
-      <FadeInSection><PastSermons /></FadeInSection>
+      {/* <FadeInSection><Testimonials /></FadeInSection>
+      <FadeInSection><PastSermons /></FadeInSection> */}
       
       <FadeInSection><Ministries /></FadeInSection>
       <FadeInSection><Events /></FadeInSection>

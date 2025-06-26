@@ -6,6 +6,7 @@ import { Cross, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
 
   return (
@@ -27,9 +28,40 @@ export default function Header() {
             <Link href="/#services" className="text-gray-700 hover:text-sky-600 font-medium">
               Services
             </Link>
-            <Link href="/#about" className="text-gray-700 hover:text-sky-600 font-medium">
-              About
-            </Link>
+
+            <div className="relative">
+              {/* You'll need to convert this to a button and handle the click */}
+              <button 
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-700 hover:text-sky-600 font-medium flex items-center focus:outline-none"
+              >
+                About us
+                <svg className={`w-4 h-4 ml-1 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Dropdown Menu - now controlled by state instead of CSS hover */}
+              {isOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10">
+                  <div className="py-1">
+                    <Link href="/#about" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      About
+                    </Link>
+                    <Link href="/testimonials" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Team
+                    </Link>
+                    <Link href="/mission" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Mission & Vision
+                    </Link>
+                    <Link href="/careers" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      Careers
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Ministries with dropdown */}
             <div className="relative">
@@ -61,7 +93,6 @@ export default function Header() {
                   <li>
                     <Link
                       href="/worship"
-                      onClick={() => setOpenDropdown(false)}
                       className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
                     >
                       Learn our Songs
