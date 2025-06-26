@@ -24,11 +24,11 @@ export default function Header() {
             <Link href="/" className="text-gray-700 hover:text-sky-600 font-medium">
               Home
             </Link>
-            <Link href="/#about" className="text-gray-700 hover:text-sky-600 font-medium">
-              About
-            </Link>
             <Link href="/#services" className="text-gray-700 hover:text-sky-600 font-medium">
               Services
+            </Link>
+            <Link href="/#about" className="text-gray-700 hover:text-sky-600 font-medium">
+              About
             </Link>
 
             {/* Ministries with dropdown */}
@@ -71,13 +71,16 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/#events" className="text-gray-700 hover:text-sky-600 font-medium">
+            {/* <Link href="/#events" className="text-gray-700 hover:text-sky-600 font-medium">
               Events
-            </Link>
+            </Link> */}
             <Link href="/#contact" className="text-gray-700 hover:text-sky-600 font-medium">
               Contact
             </Link>
-            <Button className="bg-sky-600 hover:bg-sky-700">Visit Us</Button>
+            <Link href="/sermons" className="text-gray-700 hover:text-sky-600 font-medium">
+              Past Sermons
+            </Link>
+            <Link href="/church-location"><Button  className="bg-sky-600 hover:bg-sky-700">Visit Us</Button></Link>
           </nav>
         </div>
       </div>
