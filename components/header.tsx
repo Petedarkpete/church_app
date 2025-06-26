@@ -55,7 +55,7 @@ export default function Header() {
                     <Link href="/mission" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       Mission & Vision
                     </Link>
-                    <Link href="/mission" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    <Link href="/church" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       The Church
                     </Link>
                   </div>
@@ -76,7 +76,7 @@ export default function Header() {
                 <ul className="absolute top-full left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
                   <li>
                     <Link
-                      href="#youth"
+                      href="/youth"
                       className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
                     >
                       Youth Ministry
@@ -84,7 +84,7 @@ export default function Header() {
                   </li>
                   <li>
                     <Link
-                      href="#youth"
+                      href="/women"
                       className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
                     >
                       Women Ministry
