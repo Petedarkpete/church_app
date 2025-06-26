@@ -50,13 +50,13 @@ export default function Header() {
                       About
                     </Link>
                     <Link href="/testimonials" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                      Team
+                      Pastors
                     </Link>
                     <Link href="/mission" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       Mission & Vision
                     </Link>
-                    <Link href="/careers" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                      Careers
+                    <Link href="/mission" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      The Church
                     </Link>
                   </div>
                 </div>
@@ -84,6 +84,14 @@ export default function Header() {
                   </li>
                   <li>
                     <Link
+                      href="#youth"
+                      className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
+                    >
+                      Women Ministry
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="#worship"
                       className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
                     >
@@ -91,12 +99,12 @@ export default function Header() {
                     </Link>
                   </li>
                   <li>
-                    <Link
+                    {/* <Link
                       href="/worship"
                       className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
                     >
                       Learn our Songs
-                    </Link>
+                    </Link> */}
                   </li>
                 </ul>
               )}
