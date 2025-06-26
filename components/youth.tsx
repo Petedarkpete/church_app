@@ -5,21 +5,21 @@ import { Users, Calendar, Heart } from "lucide-react"
 export default function YouthTeam() {
   const youthLeaders = [
     {
-      name: "Pastor David Chen",
-      role: "Youth Pastor",
-      image: "/placeholder.svg?height=200&width=200",
+      name: "Pastor Kinyua",
+      role: "Youth Patron",
+      image: "/images/pastor1.jpg",
       bio: "Leading our youth with passion and purpose for over 5 years.",
     },
     {
-      name: "Sarah Johnson",
-      role: "Youth Leader",
-      image: "/placeholder.svg?height=200&width=200",
+      name: "Joel Gitau",
+      role: "Youth Chairman",
+      image: "/images/pastor2.jpg",
       bio: "Mentoring teens and organizing youth activities with love.",
     },
     {
-      name: "Michael Torres",
-      role: "Youth Coordinator",
-      image: "/placeholder.svg?height=200&width=200",
+      name: "Kimani",
+      role: "Youth Treasurer",
+      image: "/images/pastor3.jpg",
       bio: "Coordinating events and building strong youth community.",
     },
   ]
@@ -71,7 +71,7 @@ export default function YouthTeam() {
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Our Youth Leaders</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {youthLeaders.map((leader, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            <Card key={index} className="text-center border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">
               <CardContent className="p-6">
                 <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
                   <img
@@ -95,7 +95,7 @@ export default function YouthTeam() {
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Upcoming Events</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {upcomingEvents.map((event, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">
                 <CardHeader>
                   <h3 className="text-xl font-bold text-blue-600">{event.title}</h3>
                   <p className="text-gray-600">{event.date}</p>
@@ -110,7 +110,7 @@ export default function YouthTeam() {
       </div>
 
       {/* Call to Action */}
-      <div className="py-16">
+      {/* <div className="py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4 text-gray-900">Join Our Youth Community</h2>
           <p className="text-lg text-gray-600 mb-8">
@@ -118,7 +118,7 @@ export default function YouthTeam() {
           </p>
           <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">Get Involved</Button>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
