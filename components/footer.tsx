@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 mb-4">
               <Cross className="h-8 w-8 text-sky-400" />
               <div>
-                <h5 className="text-xl font-bold">Grace Community Church</h5>
+                <h5 className="text-xl font-bold">Church of God, Githurai 45</h5>
                 <p className="text-sm text-gray-400">Growing in Faith Together</p>
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Grace Community Church. All rights reserved.
+            © {new Date().getFullYear()} Church of God, Githurai 45. All rights reserved.
           </p>
         </div>
       </div>

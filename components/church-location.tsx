@@ -23,7 +23,7 @@ export default function ChurchLocation() {
 
   // Church details - replace with actual church information
   const churchInfo = {
-    name: "Grace Community Church",
+    name: "Church of God Githurai 45",
     address: "Church of God Githurai 45, Kenya",
     phone: "(555) 123-4567",
     email: "info@gracecommunity.org",
