@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { Calendar, User, BookOpen, Play } from "lucide-react"
 
 export default function PastSermons() {
+  const TopCard = 
+    "scroll-mt-12 py-12 bg-gradient-to-b from-red-100 via-white to-blue-400";
   const sermons = [
     {
       title: "Walking in Faith Through Difficult Times",
@@ -42,7 +44,7 @@ export default function PastSermons() {
   ]
 
   return (
-<section id="sermons" className="scroll-mt-12 py-12 bg-gradient-to-b from-red-100 via-white to-blue-100">
+<section id="sermons" className={`${TopCard}`}>
 
     <div className="w-full max-w-7xl mx-auto px-4 py-2">
       <div className="text-center mb-12">
@@ -57,7 +59,7 @@ export default function PastSermons() {
         {sermons.map((sermon, index) => (
           <Card
             key={index}
-            className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 border-0 overflow-hidden"
+            className="border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300 overflow-hidden"
           >
             <CardHeader className="p-0">
               <div className="relative group">
@@ -114,17 +116,24 @@ export default function PastSermons() {
         ))}
       </div>
 
-      <div className="text-center mt-12">
-        <div className="bg-blue-50 rounded-lg p-6 max-w-2xl mx-auto">
+      <div className="mt-12 relative rounded-lg p-6 max-w-2xl mx-auto overflow-hidden">
+        <div className="absolute inset-0 animate-gradient bg-gradient-to-r from-blue-100 via-white to-blue-200" />
+        
+        <div className="relative z-10 text-center">
           <h3 className="text-lg font-semibold text-gray-900 mb-2">Never Miss a Message</h3>
           <p className="text-gray-600 mb-4">
             Subscribe to our YouTube channel to get notified when new sermons are uploaded.
           </p>
-          <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+          <Button
+            variant="outline"
+            className="border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+          >
             Subscribe to Our Channel
           </Button>
         </div>
       </div>
+
+
     </div>
 </section>
   )

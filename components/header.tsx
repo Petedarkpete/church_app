@@ -119,7 +119,7 @@ export default function Header() {
             <Link href="/sermons" className="text-gray-700 hover:text-sky-600 font-medium">
               Past Sermons
             </Link>
-            <Link href="/church-location"><Button  className="bg-sky-600 hover:bg-sky-700">Visit Us</Button></Link>
+            <Link href="/church-location"><Button  className="bg-sky-600 hover:bg-sky-700">Find Us</Button></Link>
           </nav>
         </div>
       </div>

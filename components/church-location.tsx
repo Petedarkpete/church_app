@@ -21,6 +21,16 @@ import {
 export default function ChurchLocation() {
   const [mapLoaded, setMapLoaded] = useState(false)
 
+  const TopCard = 
+    "scroll-mt-12 bg-gradient-to-b from-blue-50 via-white to-blue-400";
+
+  const cardStyle =
+  "border-2 border-sky-100 bg-blue-200 hover:bg-sky-50 transition-colors duration-300";
+
+  const smallCardStyle =
+  "animate-gradient bg-gradient-to-r from-blue-100 via-white to-blue-200";
+
+
   // Church details - replace with actual church information
   const churchInfo = {
     name: "Church of God Githurai 45",
@@ -61,7 +71,8 @@ export default function ChurchLocation() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+
+    <div className={`min-h-screen ${TopCard}`}>
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 py-6">
@@ -76,7 +87,7 @@ export default function ChurchLocation() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Map Section */}
           <div className="lg:col-span-2">
-            <Card className="h-full">
+            <Card className={`h-full ${cardStyle}`}>
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <MapPin className="w-5 h-5 text-blue-600" />
@@ -134,7 +145,7 @@ export default function ChurchLocation() {
           {/* Church Information Sidebar */}
           <div className="space-y-6">
             {/* Contact Information */}
-            <Card>
+            <Card className={`${cardStyle}`}>
               <CardHeader>
                 <CardTitle className="text-lg">Contact Information</CardTitle>
               </CardHeader>
@@ -175,7 +186,7 @@ export default function ChurchLocation() {
             </Card>
             
             {/* Facilities */}
-            <Card>
+            <Card className={`${cardStyle}`}>
               <CardHeader>
                 <CardTitle>Facilities & Amenities</CardTitle>
               </CardHeader>
@@ -192,7 +203,7 @@ export default function ChurchLocation() {
             </Card>
 
             {/* Quick Actions */}
-            <Card>
+            <Card className={`${cardStyle}`}>
               <CardHeader>
                 <CardTitle>Quick Actions</CardTitle>
               </CardHeader>
@@ -220,7 +231,7 @@ export default function ChurchLocation() {
 
         {/* Additional Information */}
         <div className="mt-12">
-          <Card>
+          <Card className={`h-full ${smallCardStyle}`}>
             <CardHeader>
               <CardTitle>Visitor Information</CardTitle>
             </CardHeader>
