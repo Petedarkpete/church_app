@@ -30,7 +30,7 @@ export default function ChurchWebsite() {
       <FadeInSection><PastSermons /></FadeInSection> */}
       
       <FadeInSection><Ministries /></FadeInSection>
-      <FadeInSection><Events /></FadeInSection>
+      {/* <FadeInSection><Events /></FadeInSection> */}
       <FadeInSection><ContactSection /></FadeInSection>
       <Footer />
     </div>

@@ -25,7 +25,7 @@ export default function ChurchLocation() {
     "scroll-mt-12 bg-gradient-to-b from-blue-50 via-white to-blue-400";
 
   const cardStyle =
-  "border-2 border-sky-100 bg-blue-200 hover:bg-sky-50 transition-colors duration-300";
+  "border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300";
 
   const smallCardStyle =
   "animate-gradient bg-gradient-to-r from-blue-100 via-white to-blue-200";
