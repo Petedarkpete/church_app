@@ -65,7 +65,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name
+                    Last Name 
                   </label>
                   <Input id="lastName" placeholder="Doe" />
                 </div>
