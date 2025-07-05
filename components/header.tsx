@@ -4,28 +4,45 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Cross, ChevronDown } from "lucide-react";
 import Link from "next/link";
+import test from "node:test";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(false);
+  const [testOpen, setTestOpen] = useState(false);
 
   const dropdownRef = useRef(null);
+  const dropdownRef2 = useRef(null);
 
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
+    useEffect(() => {
+      function handleClickOutside(event) {
+        if (
+          isOpen &&
+          dropdownRef.current &&
+          !dropdownRef.current.contains(event.target)
+        ) {
+          setIsOpen(false);
+        }
+
+        if (
+          testOpen &&
+          dropdownRef2.current &&
+          !dropdownRef2.current.contains(event.target)
+        ) {
+          setTestOpen(false);
+        }
       }
-    }
 
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
+      if (isOpen || testOpen) {
+        document.addEventListener('mousedown', handleClickOutside);
+      }
 
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-    }, [isOpen]);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [isOpen, testOpen]);
+
+
+    
 
     // Close dropdown when pressing Escape
       useEffect(() => {
@@ -44,8 +61,11 @@ export default function Header() {
         };
       }, [isOpen]);
 
+      // for setIsOpen and setTestOpen
+
       const handleLinkClick = () => {
         setIsOpen(false);
+        setTestOpen(false);
       };
 
   return (
@@ -140,49 +160,69 @@ export default function Header() {
             </div>
 
             {/* Ministries with dropdown */}
-            <div className="relative">
+            <div className="relative" ref={dropdownRef2}>
               <button
-                onClick={() => setOpenDropdown(!openDropdown)}
+                onClick={() => setTestOpen(!testOpen)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setTestOpen(!testOpen);
+                  }
+                }}
                 className="flex items-center text-gray-700 hover:text-sky-600 font-medium focus:outline-none"
+                aria-haspopup="true"
+                aria-expanded={testOpen}
+                aria-label="Ministries menu"
               >
-                Ministries <ChevronDown className="ml-1 h-4 w-4" />
+                Ministries
+                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${testOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              {openDropdown && (
-                <ul className="absolute top-full left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50">
-                  <li>
+
+              {testOpen && (
+
+                <div 
+                  className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10 animate-in fade-in duration-200"
+                  role="menu"
+                  aria-orientation="vertical"
+                >
+                  <div className="py-1">
+                  
                     <Link
                       href="/youth"
-                      className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-sky-100 hover:text-sky-600"
+                      role="menuitem"
+                      onClick={handleLinkClick}
                     >
                       Youth Ministry
                     </Link>
-                  </li>
-                  <li>
                     <Link
                       href="/women"
-                      className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-sky-100 hover:text-sky-600"
+                      role="menuitem"
+                      onClick={handleLinkClick}
                     >
                       Women Ministry
                     </Link>
-                  </li>
-                  <li>
                     <Link
                       href="#worship"
-                      className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-sky-100 hover:text-sky-600"
+                      role="menuitem"
+                      onClick={handleLinkClick}
                     >
                       Worship Team
                     </Link>
-                  </li>
-                  <li>
                     {/* <Link
                       href="/worship"
                       className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
                     >
                       Learn our Songs
                     </Link> */}
-                  </li>
-                </ul>
+                  
+                  </div>
+                </div>
+
+                
               )}
             </div>
 
