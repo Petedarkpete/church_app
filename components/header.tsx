@@ -77,7 +77,7 @@ export default function Header() {
                     setIsOpen(!isOpen);
                   }
                 }}
-                className="text-gray-700 hover:text-sky-600 font-medium flex items-center focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 rounded-md px-2 py-1"
+                className="text-gray-700 hover:text-sky-600 font-medium flex items-center rounded-md px-2 py-1"
                 aria-haspopup="true"
                 aria-expanded={isOpen}
                 aria-label="About us menu"

@@ -20,9 +20,9 @@ export default function ContactSection() {
                 <div>
                   <h5 className="font-semibold text-gray-900">Address</h5>
                   <p className="text-gray-600">
-                    123 Faith Street
+                    Church of God Githurai 45
                     <br />
-                    Springfield, IL 62701
+                    Githurai 45, Kenya
                   </p>
                 </div>
               </div>
