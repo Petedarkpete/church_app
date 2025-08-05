@@ -13,7 +13,7 @@ import FadeInSection from "@/components/FadeInSection";
 export default function ChurchWebsite() {
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-red">
       <Header />
       <HeroSection />
       <FadeInSection><ServiceTimes /></FadeInSection>

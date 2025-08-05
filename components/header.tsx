@@ -1,67 +1,52 @@
-"use client";
-
-import { useState, useEffect, useRef } from "react";
-import { Button } from "@/components/ui/button";
-import { Cross, ChevronDown } from "lucide-react";
-import Link from "next/link";
+"use client"
+import { useState, useEffect, useRef } from "react"
+import { Button } from "@/components/ui/button"
+import { Cross, ChevronDown } from "lucide-react"
+import Link from "next/link"
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [testOpen, setTestOpen] = useState(false);
-
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const dropdownRef2 = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false)
+  const [testOpen, setTestOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const dropdownRef2 = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (
-        isOpen &&
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
+      if (isOpen && dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
       }
-
-      if (
-        testOpen &&
-        dropdownRef2.current &&
-        !dropdownRef2.current.contains(event.target as Node)
-      ) {
-        setTestOpen(false);
+      if (testOpen && dropdownRef2.current && !dropdownRef2.current.contains(event.target as Node)) {
+        setTestOpen(false)
       }
     }
-
     if (isOpen || testOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside)
     }
-
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isOpen, testOpen]);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [isOpen, testOpen])
 
   // Close dropdown when pressing Escape
   useEffect(() => {
     function handleEscapeKey(event: KeyboardEvent) {
-      if (event.key === 'Escape' && isOpen) {
-        setIsOpen(false);
+      if (event.key === "Escape" && isOpen) {
+        setIsOpen(false)
       }
     }
-
     if (isOpen) {
-      document.addEventListener('keydown', handleEscapeKey);
+      document.addEventListener("keydown", handleEscapeKey)
     }
-
     return () => {
-      document.removeEventListener('keydown', handleEscapeKey);
-    };
-  }, [isOpen]);
+      document.removeEventListener("keydown", handleEscapeKey)
+    }
+  }, [isOpen])
 
   // for setIsOpen and setTestOpen
   const handleLinkClick = () => {
-    setIsOpen(false);
-    setTestOpen(false);
-  };
+    setIsOpen(false)
+    setTestOpen(false)
+  }
 
   return (
     <header className="bg-white shadow-sm border-b sticky top-0 z-50">
@@ -74,22 +59,20 @@ export default function Header() {
               <p className="text-sm text-gray-600">Growing in Faith Together</p>
             </div>
           </div>
-
-          <nav className="hidden md:flex items-center space-x-8 relative">
+          <nav className=" md:flex items-center space-x-8 relative">
             <Link href="/" className="text-gray-700 hover:text-sky-600 font-medium">
               Home
             </Link>
             <Link href="/#services" className="text-gray-700 hover:text-sky-600 font-medium">
               Services
             </Link>
-
             <div className="relative" ref={dropdownRef}>
-              <button 
+              <button
                 onClick={() => setIsOpen(!isOpen)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setIsOpen(!isOpen);
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault()
+                    setIsOpen(!isOpen)
                   }
                 }}
                 className="text-gray-700 hover:text-sky-600 font-medium flex items-center rounded-md px-2 py-1"
@@ -98,51 +81,51 @@ export default function Header() {
                 aria-label="About us menu"
               >
                 About us
-                <svg 
-                  className={`w-4 h-4 ml-1 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className={`w-4 h-4 ml-1 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              
+
               {/* Dropdown Menu */}
               {isOpen && (
-                <div 
+                <div
                   className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10 animate-in fade-in duration-200"
                   role="menu"
                   aria-orientation="vertical"
                 >
                   <div className="py-1">
-                    <Link 
-                      href="/#about" 
+                    <Link
+                      href="/#about"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
                       role="menuitem"
                       onClick={handleLinkClick}
                     >
                       About
                     </Link>
-                    <Link 
-                      href="/testimonials" 
+                    <Link
+                      href="/testimonials"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
                       role="menuitem"
                       onClick={handleLinkClick}
                     >
                       Pastors
                     </Link>
-                    <Link 
-                      href="/mission" 
+                    <Link
+                      href="/mission"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
                       role="menuitem"
                       onClick={handleLinkClick}
                     >
                       Mission & Vision
                     </Link>
-                    <Link 
-                      href="/church" 
+                    <Link
+                      href="/church"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
                       role="menuitem"
                       onClick={handleLinkClick}
@@ -153,15 +136,14 @@ export default function Header() {
                 </div>
               )}
             </div>
-
             {/* Ministries with dropdown */}
             <div className="relative" ref={dropdownRef2}>
               <button
                 onClick={() => setTestOpen(!testOpen)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setTestOpen(!testOpen);
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault()
+                    setTestOpen(!testOpen)
                   }
                 }}
                 className="flex items-center text-gray-700 hover:text-sky-600 font-medium focus:outline-none"
@@ -170,11 +152,12 @@ export default function Header() {
                 aria-label="Ministries menu"
               >
                 Ministries
-                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${testOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown
+                  className={`ml-1 h-4 w-4 transition-transform duration-200 ${testOpen ? "rotate-180" : ""}`}
+                />
               </button>
-
               {testOpen && (
-                <div 
+                <div
                   className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10 animate-in fade-in duration-200"
                   role="menu"
                   aria-orientation="vertical"
@@ -208,17 +191,18 @@ export default function Header() {
                 </div>
               )}
             </div>
-
             <Link href="/#contact" className="text-gray-700 hover:text-sky-600 font-medium">
               Contact
             </Link>
             <Link href="/sermons" className="text-gray-700 hover:text-sky-600 font-medium">
               Past Sermons
             </Link>
-            <Link href="/church-location"><Button className="bg-sky-600 hover:bg-sky-700">Find Us</Button></Link>
+            <Link href="/church-location">
+              <Button className="bg-sky-600 hover:bg-sky-700">Find Us</Button>
+            </Link>
           </nav>
         </div>
       </div>
     </header>
-  );
+  )
 }
