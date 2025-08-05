@@ -7,14 +7,12 @@ import {
   MapPin,
   Phone,
   Mail,
-  Clock,
   Car,
   Navigation,
   ExternalLink,
   Calendar,
   Users,
   Accessibility,
-  Wifi,
   Coffee,
 } from "lucide-react"
 

@@ -1,6 +1,4 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Users, Calendar, Heart } from "lucide-react"
 
 export default function YouthTeam() {
   const youthLeaders = [

@@ -1,7 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
 export default function Component() {
   const pastors = [

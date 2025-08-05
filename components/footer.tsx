@@ -14,7 +14,7 @@ export default function Footer() {
                 <p className="text-sm text-gray-400">Growing in Faith Together</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm">Serving our community with God's love for over 50 years.</p>
+            <p className="text-gray-400 text-sm">Serving our community with God&apos;s grace and love for over 50 years.</p>
           </div>
           <div>
             <h6 className="font-semibold mb-4">Quick Links</h6>
@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Children's Ministry
+                  Children&apos;s Ministry
                 </Link>
               </li>
               <li>

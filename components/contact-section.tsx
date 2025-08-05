@@ -9,7 +9,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h3>
-          <p className="text-lg text-gray-600">We'd love to hear from you</p>
+          <p className="text-lg text-gray-600">We&apos;d love to hear from you</p>
         </div>
         <div className="grid lg:grid-cols-2 gap-12">
           <div>

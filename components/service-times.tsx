@@ -30,7 +30,7 @@ export default function ServiceTimes() {
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-gray-900 mb-2">10:00 AM & 1:00 PM</p>
-                <p className="text-gray-600">Deep dive into God's Word</p>
+                <p className="text-gray-600">Deep dive into God&apos;s Word</p>
               </CardContent>
             </Card>
             <Card className="text-center border-2 border-sky-100 bg-blue-100 hover:bg-sky-50 transition-colors duration-300">

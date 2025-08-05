@@ -1,4 +1,3 @@
-import { FaYoutube } from "react-icons/fa"
 import { Button } from "@/components/ui/button"
 
 export default function HeroButtons() {
