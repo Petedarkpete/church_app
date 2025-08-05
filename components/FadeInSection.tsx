@@ -3,8 +3,14 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import { ReactNode } from "react";
 
-export default function FadeInSection({ children, className = "" }) {
+interface FadeInSectionProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export default function FadeInSection({ children, className = "" }: FadeInSectionProps) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.05 });
 

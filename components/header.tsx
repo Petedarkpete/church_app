@@ -9,63 +9,59 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [testOpen, setTestOpen] = useState(false);
 
-  const dropdownRef = useRef(null);
-  const dropdownRef2 = useRef(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownRef2 = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-      function handleClickOutside(event) {
-        if (
-          isOpen &&
-          dropdownRef.current &&
-          !dropdownRef.current.contains(event.target)
-        ) {
-          setIsOpen(false);
-        }
-
-        if (
-          testOpen &&
-          dropdownRef2.current &&
-          !dropdownRef2.current.contains(event.target)
-        ) {
-          setTestOpen(false);
-        }
-      }
-
-      if (isOpen || testOpen) {
-        document.addEventListener('mousedown', handleClickOutside);
-      }
-
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [isOpen, testOpen]);
-
-
-    
-
-    // Close dropdown when pressing Escape
-      useEffect(() => {
-        function handleEscapeKey(event) {
-          if (event.key === 'Escape' && isOpen) {
-            setIsOpen(false);
-          }
-        }
-
-        if (isOpen) {
-          document.addEventListener('keydown', handleEscapeKey);
-        }
-
-        return () => {
-          document.removeEventListener('keydown', handleEscapeKey);
-        };
-      }, [isOpen]);
-
-      // for setIsOpen and setTestOpen
-
-      const handleLinkClick = () => {
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        isOpen &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
+      }
+
+      if (
+        testOpen &&
+        dropdownRef2.current &&
+        !dropdownRef2.current.contains(event.target as Node)
+      ) {
         setTestOpen(false);
-      };
+      }
+    }
+
+    if (isOpen || testOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, testOpen]);
+
+  // Close dropdown when pressing Escape
+  useEffect(() => {
+    function handleEscapeKey(event: KeyboardEvent) {
+      if (event.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscapeKey);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [isOpen]);
+
+  // for setIsOpen and setTestOpen
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    setTestOpen(false);
+  };
 
   return (
     <header className="bg-white shadow-sm border-b sticky top-0 z-50">
@@ -177,16 +173,13 @@ export default function Header() {
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${testOpen ? 'rotate-180' : ''}`} />
               </button>
 
-
               {testOpen && (
-
                 <div 
                   className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10 animate-in fade-in duration-200"
                   role="menu"
                   aria-orientation="vertical"
                 >
                   <div className="py-1">
-                  
                     <Link
                       href="/youth"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-sky-100 hover:text-sky-600"
@@ -211,30 +204,18 @@ export default function Header() {
                     >
                       Worship Team
                     </Link>
-                    {/* <Link
-                      href="/worship"
-                      className="block px-4 py-2 text-gray-700 hover:bg-sky-100 hover:text-sky-600"
-                    >
-                      Learn our Songs
-                    </Link> */}
-                  
                   </div>
                 </div>
-
-                
               )}
             </div>
 
-            {/* <Link href="/#events" className="text-gray-700 hover:text-sky-600 font-medium">
-              Events
-            </Link> */}
             <Link href="/#contact" className="text-gray-700 hover:text-sky-600 font-medium">
               Contact
             </Link>
             <Link href="/sermons" className="text-gray-700 hover:text-sky-600 font-medium">
               Past Sermons
             </Link>
-            <Link href="/church-location"><Button  className="bg-sky-600 hover:bg-sky-700">Find Us</Button></Link>
+            <Link href="/church-location"><Button className="bg-sky-600 hover:bg-sky-700">Find Us</Button></Link>
           </nav>
         </div>
       </div>
