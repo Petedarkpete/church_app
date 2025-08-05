@@ -1,12 +1,15 @@
 "use client"
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Cross, ChevronDown } from "lucide-react"
+import { Cross, ChevronDown, Menu, X } from "lucide-react"
 import Link from "next/link"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [testOpen, setTestOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false)
+  const [mobileMinistryOpen, setMobileMinistryOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const dropdownRef2 = useRef<HTMLDivElement>(null)
 
@@ -46,6 +49,13 @@ export default function Header() {
   const handleLinkClick = () => {
     setIsOpen(false)
     setTestOpen(false)
+    setMobileMenuOpen(false)
+    setMobileAboutOpen(false)
+    setMobileMinistryOpen(false)
+  }
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
   }
 
   return (
@@ -59,7 +69,9 @@ export default function Header() {
               <p className="text-sm text-gray-600">Growing in Faith Together</p>
             </div>
           </div>
-          <nav className=" md:flex items-center space-x-8 relative">
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8 relative">
             <Link href="/" className="text-gray-700 hover:text-sky-600 font-medium">
               Home
             </Link>
@@ -92,7 +104,7 @@ export default function Header() {
                 </svg>
               </button>
 
-              {/* Dropdown Menu */}
+              {/* Desktop Dropdown Menu */}
               {isOpen && (
                 <div
                   className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 z-10 animate-in fade-in duration-200"
@@ -201,7 +213,135 @@ export default function Header() {
               <Button className="bg-sky-600 hover:bg-sky-700">Find Us</Button>
             </Link>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMobileMenu}
+            className="md:hidden p-2 rounded-md text-gray-700 hover:text-sky-600 hover:bg-gray-100"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <nav className="md:hidden mt-4 pb-4 border-t border-gray-200">
+            <div className="flex flex-col space-y-2 pt-4">
+              <Link href="/" className="text-gray-700 hover:text-sky-600 font-medium py-2" onClick={handleLinkClick}>
+                Home
+              </Link>
+              <Link
+                href="/#services"
+                className="text-gray-700 hover:text-sky-600 font-medium py-2"
+                onClick={handleLinkClick}
+              >
+                Services
+              </Link>
+
+              {/* Mobile About us dropdown */}
+              <div>
+                <button
+                  onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                  className="flex items-center justify-between w-full text-gray-700 hover:text-sky-600 font-medium py-2"
+                >
+                  About us
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {mobileAboutOpen && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link
+                      href="/#about"
+                      className="block text-gray-600 hover:text-sky-600 py-1"
+                      onClick={handleLinkClick}
+                    >
+                      About
+                    </Link>
+                    <Link
+                      href="/testimonials"
+                      className="block text-gray-600 hover:text-sky-600 py-1"
+                      onClick={handleLinkClick}
+                    >
+                      Pastors
+                    </Link>
+                    <Link
+                      href="/mission"
+                      className="block text-gray-600 hover:text-sky-600 py-1"
+                      onClick={handleLinkClick}
+                    >
+                      Mission & Vision
+                    </Link>
+                    <Link
+                      href="/church"
+                      className="block text-gray-600 hover:text-sky-600 py-1"
+                      onClick={handleLinkClick}
+                    >
+                      The Church
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Ministries dropdown */}
+              <div>
+                <button
+                  onClick={() => setMobileMinistryOpen(!mobileMinistryOpen)}
+                  className="flex items-center justify-between w-full text-gray-700 hover:text-sky-600 font-medium py-2"
+                >
+                  Ministries
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-200 ${mobileMinistryOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {mobileMinistryOpen && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link
+                      href="/youth"
+                      className="block text-gray-600 hover:text-sky-600 py-1"
+                      onClick={handleLinkClick}
+                    >
+                      Youth Ministry
+                    </Link>
+                    <Link
+                      href="/women"
+                      className="block text-gray-600 hover:text-sky-600 py-1"
+                      onClick={handleLinkClick}
+                    >
+                      Women Ministry
+                    </Link>
+                    <Link
+                      href="#worship"
+                      className="block text-gray-600 hover:text-sky-600 py-1"
+                      onClick={handleLinkClick}
+                    >
+                      Worship Team
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              <Link
+                href="/#contact"
+                className="text-gray-700 hover:text-sky-600 font-medium py-2"
+                onClick={handleLinkClick}
+              >
+                Contact
+              </Link>
+              <Link
+                href="/sermons"
+                className="text-gray-700 hover:text-sky-600 font-medium py-2"
+                onClick={handleLinkClick}
+              >
+                Past Sermons
+              </Link>
+              <Link href="/church-location" onClick={handleLinkClick}>
+                <Button className="bg-sky-600 hover:bg-sky-700 mt-4 w-full">Find Us</Button>
+              </Link>
+            </div>
+          </nav>
+        )}
       </div>
     </header>
   )
